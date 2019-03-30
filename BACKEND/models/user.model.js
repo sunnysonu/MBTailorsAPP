@@ -11,7 +11,7 @@ var user = new schema({
     contactNumber : {
         type : String,
         required : true
-    }
+    },
 })
 
 var user = mongoose.model('user', user);

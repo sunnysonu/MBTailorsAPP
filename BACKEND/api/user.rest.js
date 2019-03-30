@@ -23,10 +23,9 @@ module.exports = (app) => {
         }, (error) => {
             throw error;
         })
-    })
+    }),
 
-    app.get('mbtailors/users/:contactNumber', (req, res) => {
-        console.log("ASDFGHJKL");
+    app.get('/mbtailors/users/:contactNumber', (req, res) => {
         return userService.getUserByContactNumber(req).then((response) => {
             if(response) {
                 res.send(response);
