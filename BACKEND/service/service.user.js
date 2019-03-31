@@ -28,8 +28,21 @@ var getUserByContactNumber = (req) => {
     })
 }
 
+var updateUserById = (req) => {
+    return userModelService.updateUserById(req.params.id, req.body).then((user) => {
+        if(user) {
+            return Promise.resolve(user);
+        } else {
+            return Promise.resolve();
+        }
+    }).catch((error) => {
+        return Promise.resolve();
+    })
+}
+
 module.exports = {
     createNewUser : createNewUser,
     getAllUsers : getAllUsers,
-    getUserByContactNumber : getUserByContactNumber
+    getUserByContactNumber : getUserByContactNumber,
+    updateUserById : updateUserById
 }

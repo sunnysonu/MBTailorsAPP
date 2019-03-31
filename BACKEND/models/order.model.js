@@ -16,8 +16,7 @@ var order = new schema({
     },
 
     garmets : {
-        type : [Object],
-        required : true
+        type : [Object]
     },
 
     textile : {
@@ -31,11 +30,18 @@ var order = new schema({
 
     status : {
         type : String,
-        enum : ["pending", "ready", "delivered"]
+        enum : ["pending", "ready", "delivered"],
+        default : "pending",
+        required : true
     },
 
     balance : {
         type : Number,
+        required : true
+    },
+
+    deliveredTime : {
+        type : Date
     }
 });
 

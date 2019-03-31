@@ -7,7 +7,7 @@ var textile = new schema({
         required : true
     },
 
-    quantityAvailabe : {
+    quantityAvailable : {
         type : Number,
         required : true
     },

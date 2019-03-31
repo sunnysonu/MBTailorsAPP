@@ -10,7 +10,8 @@ var employee = new schema({
     status : {
         type : String,
         emun : ["active", "inactive"],
-        required : true
+        required : true,
+        default : "active"
     },
 
     transactionids : {
@@ -24,6 +25,8 @@ var employee = new schema({
 
     resignedDate : {
         type : Date,
-        default : null,
     },
 })
+
+var employee = mongoose.model('employee', employee);
+module.exports = employee;

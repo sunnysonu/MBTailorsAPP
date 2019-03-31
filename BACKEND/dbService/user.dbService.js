@@ -42,8 +42,24 @@ var getUserByContactNumber = (contactNumber) => {
     })
 }
 
+var updateUserById = (id, data) => {
+    var query = {
+        _id : id
+    };
+    var updateSet = data;
+
+    return userModel.findOneAndUpdate(query, updateSet).then((response) => {
+        if(response) {
+            return Promise.resolve(response);
+        } else {
+            return Promise.reject();
+        }
+    })
+}
+
 module.exports = {
     createNewUser : createNewUser,
     getUserByContactNumber : getUserByContactNumber,
-    getAllUsers : getAllUsers
+    getAllUsers : getAllUsers,
+    updateUserById : updateUserById
 }

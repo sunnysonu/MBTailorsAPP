@@ -33,5 +33,15 @@ module.exports = (app) => {
         }, (error) => {
             throw error;
         })
+    }),
+
+    app.put('/mbtailors/users/:id', (req, res) => {
+        return userService.updateUserById(req).then((response) => {
+            if(response) {
+                res.send(response);
+            }
+        }, (error) => {
+            throw error;
+        })
     })
 }
